@@ -5,7 +5,7 @@ export class Bottom extends Component {
     return (
       <div>
         <h4>Bottom</h4>
-        <button>b</button>
+        <button>bottom按钮</button>
       </div>
     );
   }
