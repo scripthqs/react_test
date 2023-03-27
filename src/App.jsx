@@ -1,26 +1,31 @@
 import React from "react";
-
+import Home from "./page/Home";
+import Profile from "./page/Profile";
+import "./style.css";
+import store from "./store";
 //编写一个组件
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      message: "Hello World",
-      show: true,
+      counter: store.getState().counter,
     };
   }
-  changeShow() {
-    this.setState({
-      show: false,
+  componentDidMount() {
+    store.subscribe(() => {
+      const state = store.getState();
+      this.setState({ counter: state.counter });
     });
   }
   render() {
-    const { message, show } = this.state;
+    const { counter } = this.state;
     return (
       <div>
-        <div>app</div>
-        <div>{message}</div>
-        <div>{show}</div>
+        <h2>App counter:{counter}</h2>
+        <div className="page">
+          <Home></Home>
+          <Profile></Profile>
+        </div>
       </div>
     );
   }
