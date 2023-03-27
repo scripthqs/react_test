@@ -2,7 +2,6 @@ import React from "react";
 class HelloReact extends React.Component {
   constructor() {
     super();
-
     this.state = {
       message: "Hello React",
     };
