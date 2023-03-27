@@ -8,6 +8,11 @@ import ReactSlot from "./04_组件的插槽/ReactSlot";
 import SetState from "./05_setState的使用/SetState";
 import ReactTransition from "./react_transition/ReactTransition";
 
+import ReactStyle from "./reactCss/01_内联样式的CSS/ReactStyle";
+import ReactCss from "./reactCss/02_普通的CSS写法/ReactCss";
+import ModulePage from "./reactCss/03_CSS_Modules/ModulePage";
+import CssLess from "./reactCss/04_CSS_less/CssLess";
+import StyledComponents from "./reactCss/05_css_in_js/StyledComponents";
 //编写一个组件
 class App extends React.Component {
   constructor() {
@@ -26,6 +31,16 @@ class App extends React.Component {
     const { message, show } = this.state;
     return (
       <div>
+        <StyledComponents></StyledComponents>
+        <hr />
+        <CssLess></CssLess>
+        <hr />
+        <ModulePage></ModulePage>
+        <hr />
+        <ReactCss></ReactCss>
+        <hr />
+        <ReactStyle></ReactStyle>
+        <hr />
         <ReactTransition></ReactTransition>
         <h2>{message}</h2>
         <HelloReact />
