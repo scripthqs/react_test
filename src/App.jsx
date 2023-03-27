@@ -6,6 +6,7 @@ import LifeCycle from "./02_组件的生命周期函数/LifeCycle";
 import Page from "./03_组件的通信/Page";
 import ReactSlot from "./04_组件的插槽/ReactSlot";
 import SetState from "./05_setState的使用/SetState";
+import ReactTransition from "./react_transition/ReactTransition";
 
 //编写一个组件
 class App extends React.Component {
@@ -25,6 +26,7 @@ class App extends React.Component {
     const { message, show } = this.state;
     return (
       <div>
+        <ReactTransition></ReactTransition>
         <h2>{message}</h2>
         <HelloReact />
         <ClassCpn />
@@ -40,4 +42,3 @@ class App extends React.Component {
 }
 
 export default App;
-
