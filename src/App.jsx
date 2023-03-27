@@ -1,5 +1,5 @@
 import React from "react";
-import HelloReact from "./Components/HelloReact";
+import HelloReact from "./components/HelloReact";
 import ClassCpn from "./01_类组件和函数组件/ClassCpn";
 import FunCpn from "./01_类组件和函数组件/FunctionCpn";
 import LifeCycle from "./02_组件的生命周期函数/LifeCycle";
