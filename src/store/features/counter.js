@@ -6,7 +6,7 @@ const counterSlice = createSlice({
     counter: 888
   },
   reducers: {
-    addNumber(state, { payload }) {
+    addNumber(state, { payload}) {
       state.counter = state.counter + payload
     },
     subNumber(state, { payload }) {
