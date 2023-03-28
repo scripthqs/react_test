@@ -1,8 +1,9 @@
-.page {
+.pages {
   display: flex;
 }
-.page > div {
+
+.pages > div {
   flex: 1;
-  border: 1px red solid;
   padding: 10px;
+  border: 1px solid red;
 }
