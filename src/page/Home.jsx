@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
-
+import { connect } from "react-redux";
+import { changeInfoAction } from "../store/actionCreators";
+import axios from "axios";
 export class Home extends PureComponent {
   render() {
     return (
@@ -11,6 +13,16 @@ export class Home extends PureComponent {
       </div>
     );
   }
+  async componentDidMount() {
+    let res = await axios.get("https://v.api.aa1.cn/api/yiyan/index.php");
+    console.log(res.data);
+    const info = res.data;
+    this.props.changeInfo(info);
+  }
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch) => ({
+  changeInfo: () => dispatch(changeInfoAction()),
+});
+
+export default connect(null, mapDispatchToProps)(Home);

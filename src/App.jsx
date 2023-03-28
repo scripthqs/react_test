@@ -1,8 +1,11 @@
 import React from "react";
 import Home from "./page/Home";
 import Profile from "./page/Profile";
+import About from "./page/About";
+
 import "./style.css";
 import store from "./store";
+
 //编写一个组件
 class App extends React.Component {
   constructor() {
@@ -25,6 +28,7 @@ class App extends React.Component {
         <div className="page">
           <Home></Home>
           <Profile></Profile>
+          <About></About>
         </div>
       </div>
     );
