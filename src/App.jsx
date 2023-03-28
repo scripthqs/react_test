@@ -1,38 +1,43 @@
-import React from "react";
-import Home from "./page/Home";
-import Profile from "./page/Profile";
-import About from "./page/About";
+import React, { PureComponent } from 'react'
+import Home from './pages/home'
+import Profile from './pages/profile'
+import "./style.css"
+import store from "./store"
+import About from './pages/about'
+import Category from './pages/category'
 
-import "./style.css";
-import store from "./store";
-
-//编写一个组件
-class App extends React.Component {
+export class App extends PureComponent {
   constructor() {
-    super();
+    super()
+
     this.state = {
-      counter: store.getState().counter,
-    };
+      counter: store.getState().counter.counter
+    }
   }
+
   componentDidMount() {
     store.subscribe(() => {
-      const state = store.getState();
-      this.setState({ counter: state.counter });
-    });
+      const state = store.getState().counter
+      this.setState({ counter: state.counter })
+    })
   }
+
   render() {
-    const { counter } = this.state;
+    const { counter } = this.state
+
     return (
       <div>
-        <h2>App counter:{counter}</h2>
-        <div className="page">
-          <Home></Home>
-          <Profile></Profile>
-          <About></About>
+        <h2>App Counter: {counter}</h2>
+
+        <div className='pages'>
+          <Home/>
+          <Profile/>
+          <About/>
+          <Category/>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

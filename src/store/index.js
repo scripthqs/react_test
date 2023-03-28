@@ -1,15 +1,32 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import reducer from "./reducer";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux"
+import thunk from "redux-thunk"
+
+import counterReducer from "./counter"
+import homeReducer from "./home"
+import userReducer from "./user"
 
 // 正常情况下 store.dispatch(object)
 // 想要派发函数 store.dispatch(function)
 
-// const store = createStore(reducer);// 1.基本使用
-// const store = createStore(reducer, applyMiddleware(thunk)); // 2.使用中间件
+// 将两个reducer合并在一起
+const reducer = combineReducers({
+  counter: counterReducer,
+  home: homeReducer,
+  user: userReducer
+})
 
-// redux-devtools //3.使用redux-devtools
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true }) || compose;
-const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+// combineReducers实现原理(了解)
+// function reducer(state = {}, action) {
+//   // 返回一个对象, store的state
+//   return {
+//     counter: counterReducer(state.counter, action),
+//     home: homeReducer(state.home, action),
+//     user: userReducer(state.user, action)
+//   }
+// }
 
-export default store;
+// redux-devtools
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({trace: true}) || compose;
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+
+export default store
