@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
-import { changeInfoAction } from "../store/actionCreators";
+import { fetchInfoAction } from "../store/actionCreators";
 import axios from "axios";
 export class Home extends PureComponent {
   render() {
@@ -22,7 +22,7 @@ export class Home extends PureComponent {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  changeInfo: () => dispatch(changeInfoAction()),
+  changeInfo: () => dispatch(fetchInfoAction()),
 });
 
 export default connect(null, mapDispatchToProps)(Home);

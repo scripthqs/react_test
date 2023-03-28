@@ -10,6 +10,8 @@ const initialState = {
 function reducer(state = initialState, action) {
   // console.log("reducer:", state, action);
   switch (action.type) {
+    case CHANGE_NAME:
+      return { ...state, name: action.name };
     case CHANGE_INFO:
       return { ...state, info: action.info };
     case INCREMENT:
