@@ -1,29 +1,25 @@
-import React, { PureComponent } from 'react'
-import { connect } from "react-redux"
-import About from './pages/About'
-import Home from './pages/Home'
-import Profile from './pages/Profile'
-import "./style.css"
+import React, { PureComponent } from "react";
+import Hello from "./components/Hello";
+import Counter from "./components/Counter";
+import HelloMsg from "./components/HelloMsg";
+
+import UseEffect from "./02_useEffect/UseEffect";
 
 export class App extends PureComponent {
   render() {
-    const { counter } = this.props
-
     return (
       <div>
-        <h2>App Counter: {counter}</h2>
-        <div className='pages'>
-          <Home/>
-          <Profile/>
-          <About/>
-        </div>
+        <h1>App</h1>
+        <UseEffect></UseEffect>
+        <hr />
+        <HelloMsg></HelloMsg>
+        <hr />
+        <Counter></Counter>
+        <hr />
+        <Hello></Hello>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = (state) => ({
-  counter: state.counter.counter
-})
-
-export default connect(mapStateToProps)(App)
+export default App;
