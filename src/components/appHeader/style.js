@@ -1,13 +1,8 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-  .left {
-    color: red;
-  }
-  .center {
-    color: yellow;
-  }
-  .right {
-    color: blue;
-  }
+  display: flex;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #eee;
 `;
