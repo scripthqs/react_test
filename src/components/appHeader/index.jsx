@@ -1,9 +1,14 @@
-import React, { memo } from 'react'
-
+import React, { memo } from "react";
+import { HeaderWrapper } from "./style";
 const AppHeader = memo(() => {
   return (
-    <div>AppHeader</div>
-  )
-})
+    <HeaderWrapper>
+      <div className="left">left</div>
+      <div className="center">center</div>
+      <div className="right">right</div>
+      AppHeader
+    </HeaderWrapper>
+  );
+});
 
-export default AppHeader
+export default AppHeader;
